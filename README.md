@@ -55,7 +55,7 @@ Khi muốn update script mới nhất từ `duyvinh09/Module_IOS` + `sub-store-o
 
 ## Tác giả & nguồn
 
-- Module gốc: **Đinh Duy Vinh** ([@duyvinh09](https://github.com/duyvinh09))
+- Module by: **mora_23099**
 - Sub-Store: [sub-store-org/Sub-Store](https://github.com/sub-store-org/Sub-Store)
 - Repack self-hosted by Z.ai
 
