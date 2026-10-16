@@ -219,6 +219,37 @@
     .src-toggle input:focus-visible ~ .toggle-track { box-shadow: inset 0 1px 2px rgba(0,0,0,0.4), 0 0 0 3px rgba(212,175,55,0.3); }
     .src-toggle b { color: #e8c873; font-weight: 600; }
 
+    /* ============ LOCKET GOLD CONFIG CARD ============ */
+    .locket-card { border-color: rgba(212,175,55,0.28); }
+    .locket-card .card-ico { background: linear-gradient(180deg, rgba(245,215,122,0.18), rgba(212,175,55,0.08)); }
+    .locket-row {
+      display: flex; flex-direction: column; gap: 12px; align-items: stretch;
+    }
+    .locket-url {
+      display: block; padding: 11px 14px; border-radius: 10px;
+      background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.07);
+      color: #c9a84c; font-family: 'SF Mono', 'Menlo', monospace; font-size: 11.5px;
+      word-break: break-all; line-height: 1.5;
+    }
+    .locket-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 18px; border-radius: 12px; cursor: pointer;
+      font-family: inherit; font-size: 14px; font-weight: 600;
+      color: #2a1d05; background: linear-gradient(180deg, #f5d77a, #d4af37);
+      border: 1px solid rgba(120,90,15,0.5);
+      box-shadow: 0 8px 24px -8px rgba(212,175,55,0.5), inset 0 1px 0 rgba(255,255,255,0.6);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .locket-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px -10px rgba(212,175,55,0.7), inset 0 1px 0 rgba(255,255,255,0.6); }
+    .locket-btn:active { transform: translateY(0) scale(0.99); }
+    .locket-btn svg { width: 17px; height: 17px; }
+    @media (min-width: 560px) {
+      .locket-row { flex-direction: row; align-items: center; }
+      .locket-url { flex: 1; }
+      .locket-btn { flex-shrink: 0; }
+    }
+
     /* ============ DOWNLOAD ROW (file anchors) ============ */
     .dl-row {
       max-width: 720px; margin: 0 auto 56px;
@@ -424,16 +455,34 @@
         </button>
       </div>
 
-      <button id="addBtn" class="add-btn" type="button" aria-label="Thêm cấu hình vào Shadowrocket">
+      <a id="addBtn" class="add-btn" href="shadowrocket://add/config?url=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN@main/All_In_One.conf" aria-label="Thêm cấu hình vào Shadowrocket">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
         Thêm vào Shadowrocket
-      </button>
+      </a>
 
       <label class="src-toggle" for="srcToggle">
         <input type="checkbox" id="srcToggle" />
         <span class="toggle-track"><span class="toggle-thumb"></span></span>
         <span>Dùng <b>raw.githubusercontent</b> (nếu jsDelivr chậm)</span>
       </label>
+    </section>
+
+    <!-- LOCKET GOLD CONFIG CARD -->
+    <section class="card locket-card" aria-labelledby="locketH" style="margin-top:24px;">
+      <div class="card-head">
+        <div class="card-ico" aria-hidden="true">💌</div>
+        <div>
+          <h2 id="locketH">Config duy trì Locket Gold</h2>
+          <p>Cài đặt Config này sau khi đã kích hoạt Locket Gold thành công.</p>
+        </div>
+      </div>
+      <div class="locket-row">
+        <code class="locket-url">https://raw.githubusercontent.com/DarkHexVN/LocketGold/refs/heads/main/LocketGold.mobileconfig</code>
+        <a class="locket-btn" href="https://raw.githubusercontent.com/DarkHexVN/LocketGold/refs/heads/main/LocketGold.mobileconfig" download="LocketGold.mobileconfig" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Cài đặt Config
+        </a>
+      </div>
     </section>
 
     <!-- DOWNLOAD ROW -->
@@ -525,19 +574,16 @@
   <!-- Footer -->
   <footer>
     <div class="f-brand">All&nbsp;In&nbsp;<b>One</b></div>
-    <p>Module Shadowrocket · by mora_23099 (repack by Z.ai) · Dành cho mục đích giáo dục &amp; cá nhân.</p>
+    <p>Shadowrocket Config · v1.0 · maintained by <a style="color:#e8c873;text-decoration:none;" href="https://t.me/rov230909" target="_blank" rel="noopener noreferrer">@rov230909</a></p>
+    <p style="margin-top:4px;font-size:11px;color:#5a5246;">© 2025 DarkHexVN. All product names, logos, and brands are property of their respective owners.</p>
     <div class="f-links">
       <a class="f-link" href="https://github.com/DarkHexVN/DarkHexVN" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.73-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.2-3.09-.12-.3-.52-1.46.11-3.04 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.82 0c2.22-1.5 3.2-1.18 3.2-1.18.63 1.58.23 2.74.11 3.04.75.81 1.2 1.83 1.2 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
         GitHub
       </a>
-      <a class="f-link" href="https://t.me/tienich" target="_blank" rel="noopener noreferrer">
+      <a class="f-link" href="https://t.me/rov230909" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.95 4.27L18.6 19.2c-.25 1.1-.9 1.38-1.84.86l-5.1-3.76-2.46 2.37c-.27.27-.5.5-1.02.5l.36-5.18L17.05 5.5c.41-.37-.09-.57-.64-.2L6.4 12.06l-5.04-1.58c-1.1-.34-1.12-1.1.23-1.62l19.7-7.6c.91-.34 1.71.2 1.66 1.99z"/></svg>
-        Telegram
-      </a>
-      <a class="f-link" href="https://module-ios.netlify.app" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9z" stroke="currentColor" stroke-width="1.5"/></svg>
-        Homepage
+        @rov230909
       </a>
     </div>
   </footer>
@@ -575,10 +621,15 @@
 
       function currentUrl() { return srcToggle.checked ? URL_RAW : URL_JSDELIVR; }
       function syncInput() { confInput.value = currentUrl(); }
+      function syncDeepLink() {
+        // Cập nhật deep link shadowrocket://add/config?url=<currentUrl>
+        addBtn.setAttribute("href", "shadowrocket://add/config?url=" + encodeURIComponent(currentUrl()));
+      }
 
       // Toggle jsDelivr / raw
       srcToggle.addEventListener("change", function () {
         syncInput();
+        syncDeepLink();
         showToast(srcToggle.checked ? "Đã chuyển sang raw.githubusercontent" : "Đã chuyển sang jsDelivr CDN");
       });
 
@@ -605,7 +656,7 @@
 
       copyBtn.addEventListener("click", function () { copyUrl(); });
 
-      // Add to Shadowrocket: copy + scroll to steps
+      // Add to Shadowrocket: copy link before deep link opens (deep link href đã set)
       addBtn.addEventListener("click", function () {
         copyUrl(function () {
           if (stepsSection && stepsSection.scrollIntoView) {
@@ -627,6 +678,7 @@
       } catch (e) {}
 
       syncInput();
+      syncDeepLink();
     })();
   </script>
 </body>
